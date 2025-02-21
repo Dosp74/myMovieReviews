@@ -27,6 +27,7 @@ def review_create(request):
       jenre = jenre,
       starrating = request.POST['starrating'],
       runningtime = request.POST['runningtime'],
+      image = request.FILES.get('image'),
       content = request.POST['content'],
       director = request.POST['director'],
       actor = request.POST['actor'],
@@ -53,6 +54,7 @@ def review_update(request, pk):
     newjenre = jenre
     newstarrating = request.POST.get('starrating')
     newrunningtime = request.POST.get('runningtime')
+    newimage = request.FILES.get('image')
     newcontent = request.POST.get('content')
     newdirector = request.POST.get('director')
     newactor = request.POST.get('actor')
@@ -61,6 +63,8 @@ def review_update(request, pk):
     review.jenre = newjenre
     review.starrating = newstarrating
     review.runningtime = newrunningtime
+    if newimage:
+      review.image = newimage
     review.content = newcontent
     review.director = newdirector
     review.actor = newactor

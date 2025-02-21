@@ -33,24 +33,33 @@
             </div>
           </div>
           <div class="review-body">
-            <p class="review-year">
-              <span class="label">개봉년도</span> {{ review.year }}
-            </p>
-            <p class="review-director">
-              <span class="label">감독</span> {{ review.director }}
-            </p>
-            <p class="review-actor">
-              <span class="label">주연</span> {{ review.actor }}
-            </p>
-            <p class="review-jenre">
-              <span class="label">장르</span> {{ review.jenre }}
-            </p>
-            <p class="review-starrating">
-              <span class="label">별점</span> {{ review.starrating }}
-            </p>
-            <p class="review-runningtime">
-              <span class="label">러닝타임</span> {{ display_runningtime }}
-            </p>
+            <div>
+              {% if review.image.url != null and review.image.url != '' %}
+                <img src="{{ review.image.url }}" alt="{{ review.title }}" class="list-item-image">
+              {% else %}
+                <img src="{% static 'MOVIE.png' %}" alt="{{ review.title }}" class="list-item-image">
+              {% endif %}
+            </div>
+            <div class="review-info">
+              <p class="review-year">
+                <span class="label">개봉년도</span> {{ review.year }}
+              </p>
+              <p class="review-director">
+                <span class="label">감독</span> {{ review.director }}
+              </p>
+              <p class="review-actor">
+                <span class="label">주연</span> {{ review.actor }}
+              </p>
+              <p class="review-jenre">
+                <span class="label">장르</span> {{ review.jenre }}
+              </p>
+              <p class="review-starrating">
+                <span class="label">별점</span> {{ review.starrating }}
+              </p>
+              <p class="review-runningtime">
+                <span class="label">러닝타임</span> {{ display_runningtime }}
+              </p>
+            </div>
           </div>
           <div class="review-text-container">
             <p class="review-text">

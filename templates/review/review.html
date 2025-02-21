@@ -29,6 +29,13 @@
     {% for review in reviews %}
       <a href="{% url 'review:review_detail' review.pk %}">
         <div class="list-item">
+          <div>
+            {% if review.image.url != null and review.image.url != '' %}
+              <img src="{{ review.image.url }}" alt="{{ review.title }}" class="list-item-image">
+            {% else %}
+              <img src="{% static 'MOVIE.png' %}" alt="{{ review.title }}" class="list-item-image">
+            {% endif %}
+          </div>
           <div class="list-item-title">{{ review.title }}</div>
           <p class="list-item-year">
             <span class="label">개봉년도</span> {{ review.year }}

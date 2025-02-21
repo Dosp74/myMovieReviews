@@ -6,6 +6,7 @@ class Review(models.Model):
   jenre = models.TextField()
   starrating = models.TextField()
   runningtime = models.IntegerField()
+  image = models.ImageField('image', blank=True, upload_to='images/%Y%m%d')
   content = models.TextField()
   director = models.TextField()
   actor = models.TextField()

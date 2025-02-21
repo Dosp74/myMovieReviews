@@ -45,8 +45,28 @@ header a {
 }
 
 .review-body {
+  display: flex;
+  align-items: flex-start;
   background-color: rgb(228, 228, 228);
-  padding: 10px;
+  padding: 20px;
+  gap: 20px;
+}
+
+.list-item-image {
+  width: 300px;
+  height: 300px;
+  object-fit: fill;
+  border-radius: 5px;
+}
+
+.review-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.review-info p {
+  font-size: 16px;
 }
 
 .label {

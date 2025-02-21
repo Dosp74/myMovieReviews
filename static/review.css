@@ -37,7 +37,7 @@ header a {
   border: 1px solid #ddd;
   border-radius: 5px;
   width: 210px;
-  height: 300px;
+  height: 400px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
@@ -48,9 +48,17 @@ header a {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
+.list-item-image {
+  width: 100%;
+  height: 200px;
+  object-fit: fill;
+  border-radius: 5px;
+}
+
 .list-item-title {
   font-size: 20px;
   font-weight: bold;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 

@@ -21,7 +21,7 @@
     <div class="form-container">
       <div class="form-title"><span style="color: rgb(255, 100, 100);">Movie</span>review🍿</div>
       <div class="line"></div>
-      <form action="{% url 'review:review_update' review.pk %}" method="post" onsubmit="return validateForm(event)">
+      <form action="{% url 'review:review_update' review.pk %}" method="post" enctype="multipart/form-data" onsubmit="return validateForm(event)">
           {% csrf_token %}
           <div>
             <label for="title" class="form-label">제목:</label>
@@ -58,6 +58,10 @@
           <div>
             <label for="runningtime" class="form-label">러닝타임:</label>
             <input type="text" name="runningtime" class="form-control" id="runningtime" value="{{ review.runningtime }}">
+          </div>
+          <div>
+            <label for="image" class="form-label">포스터:</label>
+            <input type="file" name="image" class="form-control" id="image">
           </div>
           <div class="content-container">
             <label for="content" class="form-label">리뷰:</label>
